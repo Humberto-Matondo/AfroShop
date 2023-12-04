@@ -66,4 +66,4 @@ class Perfil(models.Model):
     
     class Meta:
         verbose_name = 'Perfil'
-        verbose_name_plural = 'Perfis'
+        verbose_name_plural = 'Perfis' 
