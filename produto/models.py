@@ -26,12 +26,12 @@ class Produto(models.Model):
     )
 
     def get_preco_formatado(self):
-        return f'$ {self.preco_marketing:.2f}'.replace('.',',')
+        return f'${self.preco_marketing:.2f}'.replace('.',',')
     get_preco_formatado.short_description = 'Preço'
 
     def get_preco_promocional_formatado(self):
-        return f'$ {self.preco_marketing_promocional:.2f}'.replace('.',',')
-    preco_marketing_promocional.short_description = 'Preço Promocional'
+        return f'${self.preco_marketing_promocional:.2f}'.replace('.',',')
+    get_preco_promocional_formatado.short_description = 'Preço Promocional'
 
     @staticmethod
     def resize_image(img, new_width=800):
