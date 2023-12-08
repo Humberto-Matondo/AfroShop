@@ -140,7 +140,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-MESSAGE_TAG = {
+MESSAGE_TAGS = {
     constants.DEBUG: 'alert-info',
     constants.ERROR: 'alert-danger',
     constants.INFO: 'alert-info',
