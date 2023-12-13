@@ -10,3 +10,7 @@ def formata_preco(val):
 @register.filter
 def cart_total_quantidade_total_do_carrinho(carrinho):
     return utils.cart_total_quantidade_total_do_carrinho(carrinho)
+
+@register.filter
+def cart_total(carrinho):
+    return utils.cart_total(carrinho)

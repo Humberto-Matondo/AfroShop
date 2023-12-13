@@ -29,7 +29,7 @@
                             <a href="{% url 'produto:detalhe' linha.slug %}">
                                 {{ linha.produto_nome }}
                             </a>
-                            <a class="ml-3" href="#">
+                            <a class="ml-3" href="{% url 'produto:removerdocarrinho' %}?vid= {{linha.variacao_id}}">
                                 <i class="fas fa-times-circle text-danger" aria-hidden="true"></i>
                             </a>
                         </td>
@@ -64,7 +64,7 @@
                 <table class="table">
                     <tr>
                         <td class="font-weight-bold">Total</td>
-                        <td>R$100000</td>
+                        <td>{{ carrinho | cart_total | formata_preco}}</td>
                     </tr>
                 </table>
             </div>
