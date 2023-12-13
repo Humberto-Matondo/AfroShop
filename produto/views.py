@@ -100,8 +100,8 @@ class AdicionarAoCarrinho(View):
                 'preco_quantitativo': preco_unitario,
                 'preco_quantitativo_promocional': preco_unitario_promocional,
                 'quantidade': 1,
-                'slug': slug,
                 'imagem': imagem,
+                'slug': slug,
             }
 
         self.request.session.save()
@@ -116,7 +116,10 @@ class RemoverDoCarrinho(View):
 
 class Carrinho(View):
     def get(self, *args, **kwargs):
-        return render(self.request, 'produto/carrinho.html')
+        context = {
+            'carrinho': self.request.session.get('carrinho', {})   
+        }
+        return render(self.request, 'produto/carrinho.html', context)
 
 class Finalizar(View):
     pass
