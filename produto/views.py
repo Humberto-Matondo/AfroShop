@@ -150,5 +150,5 @@ class Carrinho(View):
         }
         return render(self.request, 'produto/carrinho.html', context)
 
-class Finalizar(View):
+class ResumoDaCompra(View):
     pass
