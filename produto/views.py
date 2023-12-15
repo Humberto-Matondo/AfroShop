@@ -23,11 +23,6 @@ class DetalheProduto(DetailView):
 
 class AdicionarAoCarrinho(View):
     def get(self, *args, **kwargs):
-        #TODO: remover linhas abaixo:
-        # if self.request.session.get('carrinho'):  
-        #     del self.request.session['carrinho']
-        #     self.request.session.save()
-
         http_referer = self.request.META.get(
             'HTTP_REFERER', 
             reverse('produto:lista'),
@@ -124,9 +119,6 @@ class RemoverDoCarrinho(View):
             return redirect(http_referer)
 
         if not self.request.session.get('carrinho'):
-            return redirect(http_referer)
-        
-        if variacao_id not in self.request.session['carrinho']:
             return redirect(http_referer)
 
         carrinho = self.request.session['carrinho'][variacao_id]
