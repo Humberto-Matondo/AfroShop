@@ -11,7 +11,7 @@ class PerfilForm(forms.ModelForm):
         exclude = ('usuario',)
 
 class UserForm(forms.ModelForm):
-    password = forms.CharField(required=False, widget=forms.PasswordInput(), label = 'Senha')
+    password = forms.CharField(required=False, widget=forms.PasswordInput(), label = 'Senha', help_text= '')
     password_2 = forms.CharField(required=False, widget=forms.PasswordInput(), label = 'Confirme a senha')
     def __init__(self, usuario=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -38,6 +38,7 @@ class UserForm(forms.ModelForm):
             error_msg_email_exists = 'E-mail ja Existe'
             error_msg_password_match = 'As senhas são diferentes'
             error_msg_password_short = 'Sua senha precisa de pelo menos 8 caracteres'
+            error_msg_required_field = 'Campo obrigatorio'
 
             if self.usuario:
                 
@@ -58,7 +59,24 @@ class UserForm(forms.ModelForm):
                         validation_error_msgs['password'] = error_msg_password_short
                 
             else:
-                validation_error_msgs['username'] = ' '
-        
+                if usuario_bd:
+                    validation_error_msgs['username'] = error_msg_email_exists
+
+                if email_bd:
+                    validation_error_msgs['email'] = error_msg_email_exists
+
+                if not password_data:
+                    validation_error_msgs['password'] = error_msg_required_field
+                
+                if not password_2_data:
+                    validation_error_msgs['password_2'] = error_msg_required_field
+                    
+                if password_data != password_2_data:
+                    validation_error_msgs['password'] = error_msg_password_match
+                    validation_error_msgs['password_2'] = error_msg_password_match
+
+                if len(password_data) < 8: 
+                    validation_error_msgs['password'] = error_msg_password_short
+                        
             if validation_error_msgs:
                 raise{forms.ValidationError(validation_error_msgs)}
