@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load omfilters %}
+
+{% block conteudo %}
+
+  <div class="row mb-5">
+    <div class="col-lg">
+      <h2>Resumo da sua compra</h2>
+
+      <p class="lead">Dados do usuário</p>
+      <p>
+        Caso precise editar, <a href="{% url 'perfil:criar' %}">clique aqui</a>
+      </p>
+      <dl class="row">
+        <dt class="col-lg-2">Nome:</dt>
+        <dd class="col-lg-4">{{ usuario.first_name }}</dd>
+        <dt class="col-lg-2">Sobrenome:</dt>
+        <dd class="col-lg-4">{{ usuario.last_name }}</dd>
+
+        <dt class="col-lg-2">Nascimento:</dt>
+        <dd class="col-lg-4">{{ usuario.perfil.data_nascimento }}</dd>
+        <dt class="col-lg-2">E-mail:</dt>
+        <dd class="col-lg-4">{{ usuario.email }}</dd>
+      </dl>
+
+      <p class="lead">Dados de endereço</p>
+      <p>
+        Caso precise editar, <a href="{% url 'perfil:criar' %}">clique aqui</a>
+      </p>
+      <dl class="row">
+        <dt class="col-lg-2">Cidade:</dt>
+        <dd class="col-lg-4">{{ usuario.perfil.cidade }}</dd>
+        <dt class="col-lg-2">Endereço:</dt>
+        <dd class="col-lg-4">{{ usuario.perfil.endereco }}</dd>
+
+        <dt class="col-lg-2">Nascimento:</dt>
+        <dd class="col-lg-4">{{ usuario.perfil.bairro }}</dd>
+        <dt class="col-lg-2">Número da Casa:</dt>
+        <dd class="col-lg-4">{{ usuario.perfil.numero }}</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+      <h3>RESUMO DO CARRINHO</h3>
+      <p class="lead">Os produtos, quantidades e preços que você escolheu.</p>
+      {% include 'parciais/_carrinho.html' %}
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+      <p class="lead text-center">
+            Total do carrinho: {{ carrinho|cart_totals|formata_preco }}
+      </p>
+    </div>
+
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-block btn-primary btn-lg" href="{% url 'pedido:pagar' %}">Pagar</a>
+    </div>
+  </div>
+
+{% endblock %}

@@ -49,6 +49,10 @@ class BasePerfil(View):
 class Criar(BasePerfil):
    def post(self, *args, **kwargs):
         if not self.userform.is_valid() or not self.perfilform.is_valid():
+            messages.error(
+                    self.request,
+                    'Existe erros de cadastro, verifique se todos os campos foram preenchidos corretamente.'
+                )
             return self.renderizar
 
         usermame = self.userform.cleaned_data.get('usermame')
