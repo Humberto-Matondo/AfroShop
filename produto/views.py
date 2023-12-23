@@ -6,6 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
 from . import models
+from perfil.models import Perfil
 
 # Create your views here.
 
@@ -133,8 +134,6 @@ class RemoverDoCarrinho(View):
         self.request.session.save()
         return redirect(http_referer)
 
-
-
 class Carrinho(View):
     def get(self, *args, **kwargs):
         context = {
@@ -147,6 +146,22 @@ class ResumoDaCompra(View):
         if not self.request.user.is_authenticated:
             return redirect('perfil:criar')
 
+        perfil = Perfil.objects.filter(usuario=self.request.user).exists()
+
+        if not perfil:
+            messages.error(
+                self.request,
+                'Usuario sem perfil'
+            )
+            return redirect('perfil:criar')
+        
+        if not self.request.session.get('carrinho'):
+            if not perfil:
+                messages.error(
+                    self.request,
+                    'Carrinho Vazio'
+                )
+                return redirect('produto:lista')
         context = {
             'usuario': self.request.user,
             'carrinho': self.request.session['carrinho'],
