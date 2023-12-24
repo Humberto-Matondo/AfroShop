@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load omfilters %}
+{% load static %}
 
 {% block conteudo %}
 
@@ -58,7 +59,7 @@
 
   <div class="row">
     <div class="col">
-      <a class="btn btn-block btn-primary btn-lg" href="{% url 'pedido:pagar' %}">Pagar</a>
+      <a class="btn btn-block btn-primary btn-lg" href="{% url 'pedido:salvarpedido' %}">Pagar</a>
     </div>
   </div>
 
