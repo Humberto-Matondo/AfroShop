@@ -44,9 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-
-    #TODO: remover debug toolbar
     'debug_toolbar',
 ]
 
@@ -60,7 +57,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #TODO: remover debug toolbar
     'debug_toolbar.middleware.DebugToolbarMiddleware',  
     
 ]
@@ -161,7 +157,6 @@ SESSION_SAVE_EVERY_REQUEST = False
 #serializer - padrao JSON
 #SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
     
-#TODO: remover debug toolbar
 INTERNAL_IPS = [
 
     '127.0.0.1',
