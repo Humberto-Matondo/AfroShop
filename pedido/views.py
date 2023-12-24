@@ -10,7 +10,7 @@ from .models import ItemPedido, Pedido
 
 # Create your views here.
 
-class DispatchLoginRequired(View):
+class DispatchLoginRequiredMixin(View):
     def dispatch(self, *args, **kwargs):
 
         if not self.request.user.is_authenticated:
@@ -18,18 +18,18 @@ class DispatchLoginRequired(View):
 
         return super().dispatch(*args, **kwargs)
     
-
-class Pagar(DispatchLoginRequired, DetailView):
-    template_name = 'pedido/pagar.html'
-    model = Pedido
-    pk_url_kwargs = 'pk'
-    context_object_name = 'pedido'
-
     def get_queryset(self, *args, **kwargs):
         qs = super().get_queryset(*args, **kwargs)
         qs = qs.filter(usuario = self.request.user)
         return qs
     
+
+class Pagar(DispatchLoginRequiredMixin, DetailView):
+    template_name = 'pedido/pagar.html'
+    model = Pedido
+    pk_url_kwargs = 'pk'
+    context_object_name = 'pedido'
+
 class SalvarPedido(View):
     
     template_name = 'pedido/pagar.html'
@@ -120,8 +120,15 @@ class SalvarPedido(View):
             )
         )
 
-class Detalhe(View):
-    pass
+class Detalhe(DispatchLoginRequiredMixin, DetailView):
+    model = Pedido
+    context_object_name = 'pedido'
+    template_name = 'pedido/detalhe.html'
+    pk_url_kwarg = 'pk'
 
-class Lista(View):
-    pass
+class Lista(DispatchLoginRequiredMixin, ListView):
+    model = Pedido
+    context_object_name = 'pedidos'
+    template_name = 'pedido/lista.html'
+    paginate_by = 10
+    ordering = ['-id']

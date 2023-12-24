@@ -5,8 +5,9 @@ from django.views import View
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
-from . import models
 from perfil.models import Perfil
+
+from . import models
 
 # Create your views here.
 
@@ -15,6 +16,7 @@ class ListaProdutos(ListView):
     template_name = 'produto/lista.html'
     context_object_name = 'produtos'
     paginate_by = 10
+    ordering = ['-id']
 
 class DetalheProduto(DetailView):
     model = models.Produto
