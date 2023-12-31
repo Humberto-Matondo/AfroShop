@@ -1,7 +1,11 @@
 {% load omfilters %}
+{% load static %}
 
 <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
-  <a class="navbar-brand" href="{% url 'produto:lista' %}">AfroShop</a>
+    <a class="navbar-brand" href="{% url 'produto:lista' %}">
+      <img src="media/TITULO.png"  style="height: 50px; width: 140px;"/>
+    </a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -35,7 +39,7 @@
       {% endif %}
     </ul>
     <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'produto:busca' %}">
-      <input name = "termo" value = "{{ request.GET.termo }}" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" />
+      <input name="termo" value="{{ request.GET.termo }}" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" />
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
     </form>
   </div>
