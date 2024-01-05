@@ -574,6 +574,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  animation: fadeIn 1s;
 }
 
 @media (min-width: 576px) {
@@ -4712,7 +4713,7 @@ input[type="button"].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 0.50rem;
 }
 
 .card>hr {

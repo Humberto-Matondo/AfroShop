@@ -12,11 +12,13 @@
         {% for produto in produtos %}
           <div class="card">
             {% if produto.imagem %}
-              <img class="card-img-top" src="{{ produto.imagem.url }}" alt="{{ produto.name }}" />
+              <a style="color:#009929;" href="{% url 'produto:detalhe' produto.slug %}">
+                <img class="card-img-top" src="{{ produto.imagem.url }}" alt="{{ produto.name }}" />
+              </a>
             {% endif %}
 
             <div class="card-body">
-              <h5 class="card-title" ><a style="color:#009929;" href="{% url 'produto:detalhe' produto.slug %}">{{ produto.nome }} </a></h5>
+              <h5 class="card-title"><a style="color:#009929;" href="{% url 'produto:detalhe' produto.slug %}">{{ produto.nome }}</a></h5>
 
               <p class="card-text">{{ produto.descrisao_curta }}</p>
 
