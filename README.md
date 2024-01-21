@@ -8,9 +8,9 @@
 
 2. **Data Security:** User data security is a priority. It implements security measures to protect users' personal information.
 
-3. **Search and Filtering:** It offers search and filtering features to quickly locate a specific contact using just the first or last name, even in extensive lists.
+3. **Search and Filtering:** It offers search and filtering features to quickly locate a specific product using just the first or last name, even in extensive lists.
 
-4. **Multiplatform Access:** The app is accessible on various platforms, allowing users to manage their contacts from any internet-enabled device.
+4. **Multiplatform Access:** The app is accessible on various platforms, allowing users to manage from any internet-enabled device.
 
 <h2>DEMONSTRATION🖼️</h2>
 
