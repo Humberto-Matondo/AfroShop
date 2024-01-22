@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% load omfilters %}
-{% load static %}
+
+{% block titulo %}
+  Carrinho |
+{% endblock %}
 
 {% block conteudo %}
-  {% load static %}
-
   {% if carrinho %}
     <div class="row mt-3">
       <div class="col">
@@ -43,4 +44,3 @@
     </div>
   {% endif %}
 {% endblock %}
-

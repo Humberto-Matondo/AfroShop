@@ -59,7 +59,7 @@ class AdicionarAoCarrinho(View):
             )
             return redirect(http_referer)
 
-        variacao = get_object_or_404(models.Variacao, id = variacao_id)
+        variacao = get_object_or_404(models.Variacao, id=variacao_id)
         variacao_estoque = variacao.estoque
         produto = variacao.produto
 
@@ -72,9 +72,9 @@ class AdicionarAoCarrinho(View):
         slug = produto.slug
         imagem = produto.imagem
 
-        if imagem: 
-            imagem = produto.nome
-        else: 
+        if imagem:
+            imagem = imagem.name
+        else:
             imagem = ''
 
         if variacao.estoque < 1 :
@@ -107,7 +107,6 @@ class AdicionarAoCarrinho(View):
             carrinho[variacao_id]['preco_quantitativo_promocional'] = preco_unitario_promocional * quantidade_carrinho
 
         else:
-            #TODO: variacao N existe no carrinho
             carrinho[variacao_id] = {
                 'produto_id': produto_id,
                 'produto_nome': produto_nome,
@@ -118,8 +117,8 @@ class AdicionarAoCarrinho(View):
                 'preco_quantitativo': preco_unitario,
                 'preco_quantitativo_promocional': preco_unitario_promocional,
                 'quantidade': 1,
-                'imagem': imagem,
                 'slug': slug,
+                'imagem': imagem,
             }
 
         self.request.session.save()
