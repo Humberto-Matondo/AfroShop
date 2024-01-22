@@ -4704,9 +4704,7 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
-
-
-.card {
+.card{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -4716,13 +4714,6 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.50rem;
-
-  transition: transform 1000ms;
-  transition-timing-function: cubic-bezier(.75, -3, .25, 4);
-}
-
-.card:hover {
-  transform: scale(2.5);
 }
 
 .card>hr {
