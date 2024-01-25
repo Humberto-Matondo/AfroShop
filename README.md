@@ -17,8 +17,6 @@
   <div>
     <img src="https://i.ibb.co/KDLbTns/Afro-Shop2.png" alt="Afro-Shop-inicial-page" width="350" height="200"/>
     <img src="https://i.ibb.co/djfCCcS/Afro-Shop1.png" alt="Afro-Shop"  width="350" height="200" />
-    <img src="https://i.ibb.co/KDLbTns/Afro-Shop2.png" alt="Afro-Shop-inicial-page" width="350" height="200"/>
-    <img src="https://i.ibb.co/djfCCcS/Afro-Shop1.png" alt="Afro-Shop"  width="350" height="200" />
   </div>
   
   <br>
