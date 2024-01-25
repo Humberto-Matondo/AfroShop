@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure--3p$(9#^-e5&*0rechk2@_ou%m!01)lz(v^z$a$zo37hxji0$7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,12 +85,12 @@ WSGI_APPLICATION = 'loja.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
 
 
 # Password validation
@@ -131,7 +131,7 @@ USE_L10N = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build' , 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'templates/static')
 ]
