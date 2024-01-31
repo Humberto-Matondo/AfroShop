@@ -24,10 +24,6 @@
   If you wish to only view the project, please log in using my username and password:<br/>
   **User:** HM <br/>
   **Password:** E_commerce01
-
-  **Link:** Not yet available <br/>
-  **OBS: ** Caso não consiga acessar ao app, então o servidor está DESLIGADO.
-
     
   <h2>TOOLS ⚒️</h2>
   
