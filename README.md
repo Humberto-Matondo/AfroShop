@@ -1,7 +1,21 @@
 <h1 align="center">AFROSHOP<h1>
+  
+  <div>
+    <img src="https://i.ibb.co/KDLbTns/Afro-Shop2.png" alt="Afro-Shop-inicial-page" width="350" height="200"/>
+    <img src="https://i.ibb.co/djfCCcS/Afro-Shop1.png" alt="Afro-Shop"  width="350" height="200" />
+  </div>
+
+<h2>About:</h2>
+
   Is an e-commerce app created especially for lovers of African culture. Here, you can find a wide variety of African styles to celebrate and value Afro characteristics. With an intuitive and user-friendly interface, Afroshop offers a unique shopping experience, connecting customers 
   to authentic and high-quality products directly from various African countries. Furthermore, the app is a way to promote diversity and representation in fashion and the arts, encouraging the appreciation of African culture and its traditions.
 
+ <br>
+  
+  If you wish to only view the project, please log in using my username and password:<br/>
+  **User:** HM <br/>
+  **Password:** E_commerce01
+  
 <h2>Key features and functionalities include:</h2>
 
 1. **Intuitive Interface:** The user interface is designed to be user-friendly and easy to navigate, making the app accessible to users of all experience levels.
@@ -12,18 +26,6 @@
 
 4. **Multiplatform Access:** The app is accessible on various platforms, allowing users to manage from any internet-enabled device.
 
-<h2>DEMONSTRATION🖼️</h2>
-
-  <div>
-    <img src="https://i.ibb.co/KDLbTns/Afro-Shop2.png" alt="Afro-Shop-inicial-page" width="350" height="200"/>
-    <img src="https://i.ibb.co/djfCCcS/Afro-Shop1.png" alt="Afro-Shop"  width="350" height="200" />
-  </div>
-  
-  <br>
-  
-  If you wish to only view the project, please log in using my username and password:<br/>
-  **User:** HM <br/>
-  **Password:** E_commerce01
     
   <h2>TOOLS ⚒️</h2>
   
